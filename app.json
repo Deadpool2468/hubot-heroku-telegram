@@ -1,22 +1,21 @@
 {
-  "name": "Hubot for IRC",
-  "description": "One-button deploy for Hubot on Heroku with IRC adapter.",
+  "name": "Hubot for Telegram",
+  "description": "One-button deploy for Hubot on Heroku with Telegram adapter.",
   "logo": "https://i.cloudup.com/_823ueoTYl.png",
-  "repository": "https://github.com/cobyism/hubot-heroku-irc",
+  "repository": "https://github.com/carlosrodriguez/hubot-heroku-telegram",
   "env": {
     "HEROKU_URL": {
       "description": "Url of this app so hubot can regularly ping himself to stay awake.",
       "value": "http://YOURAPPNAMEHERE.herokuapp.com"
     },
-    "HUBOT_SLACK_TOKEN": {
-      "description": "The token you are given by Slack when you add the Hubot integration."
+    "TELEGRAM_TOKEN": {
+      "description": "The token that the BotFather gives you."
     },
-    "HUBOT_SLACK_TEAM": {
-      "description": "Your team's Slack subdomain. e.g. if your team is https://myteam.slack.com/, you would enter 'myteam' here."
+    "TELEGRAM_WEBHOOK": {
+      "description": "You can specify a webhook URL. The adapter will register TELEGRAM_WEBHOOK/TELEGRAM_TOKEN with Telegram and listen there."
     },
-    "HUBOT_SLACK_BOTNAME": {
-      "description": "Name your Hubot",
-      "value": "slackbot"
+    "TELEGRAM_INTERVAL": {
+      "description": "You can specify the interval (in milliseconds) in which the adapter will poll Telegram for updates. This option only applies if you are not using a webhook."
     }
   },
   "addons": [
