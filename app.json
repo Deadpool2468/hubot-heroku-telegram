@@ -12,10 +12,12 @@
       "description": "The token that the BotFather gives you."
     },
     "TELEGRAM_WEBHOOK": {
-      "description": "You can specify a webhook URL. The adapter will register TELEGRAM_WEBHOOK/TELEGRAM_TOKEN with Telegram and listen there."
+      "description": "You can specify a webhook URL. The adapter will register TELEGRAM_WEBHOOK/TELEGRAM_TOKEN with Telegram and listen there.",
+      "required": false
     },
     "TELEGRAM_INTERVAL": {
-      "description": "You can specify the interval (in milliseconds) in which the adapter will poll Telegram for updates. This option only applies if you are not using a webhook."
+      "description": "You can specify the interval (in milliseconds) in which the adapter will poll Telegram for updates. This option only applies if you are not using a webhook.",
+      "required": false
     }
   },
   "addons": [
