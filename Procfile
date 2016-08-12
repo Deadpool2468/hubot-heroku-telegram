@@ -1,1 +1,1 @@
-web: bin/hubot -a telegram -n Hubot
+web: bin/hubot -a telegram -n DinkyBot
