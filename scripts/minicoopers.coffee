@@ -13,13 +13,26 @@ module.exports = (robot) ->
 
   apiUrl = process.env.MINICOOPERS_API_URL
 
+  urls =
+    scores: apiUrl + "/scores"
+    add: apiUrl + "/scores/add"
+
   robot.respond /mcc add (.*) (.*)/i, (msg) ->
-    score = msg.match[1]
+    value = msg.match[1]
     name = msg.match[2]
-    msg.send "Add #{score} to #{name}"
+    data = JSON.stringify({"name": name, "value": value})
+    msg.http(urls.scores).post(data) (err, res, body) ->
+        if res.statusCode is 200
+          scores = JSON.parse body
+          summary = "Scores - "
+          for position, score of scores
+            summary += "#{score.clan}: #{score.score} "
+          msg.send summary
+        else
+          msg.send "Unable to get scores"
 
   robot.respond /mcc scores/i, (msg) ->
-    msg.http("http://minicoopers.herokuapp.com/api/scores").get() (err, res, body) ->
+    msg.http(urls.scores).get() (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
           summary = "Scores - "
