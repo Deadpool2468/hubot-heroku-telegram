@@ -3,6 +3,7 @@
 #
 # Commands:
 #   mcc add <score> <name> - Add <score> to <name>
+#   mcc scores - Get clan scores
 
 module.exports = (robot) ->
 
