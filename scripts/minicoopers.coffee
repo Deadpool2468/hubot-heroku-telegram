@@ -22,7 +22,7 @@ module.exports = (robot) ->
     msg.http("http://minicoopers.herokuapp.com/api/scores").get() (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
-          summary = "Scores: "
+          summary = "Scores - "
           for position, score of scores
             summary += "#{score.clan}: #{score.score} "
           msg.send summary
