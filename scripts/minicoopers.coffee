@@ -5,7 +5,6 @@
 #   mcc scores - Get clan scores
 #   mcc add <score> <name> - Add <score> to <name>
 #   mcc take <score> <name> - Take <score> from <name>
-
 module.exports = (robot) ->
 
   unless process.env.MINICOOPERS_API_URL?
