@@ -22,8 +22,10 @@ module.exports = (robot) ->
   robot.respond /mcc add (.*) (.*)/i, (msg) ->
     value = msg.match[1]
     name = msg.match[2]
-    data = JSON.stringify({"name": name, "value": value})
-    msg.http(urls.add).post(data) (err, res, body) ->
+    json = JSON.stringify({"name": name, "value": value})
+    msg.http(urls.add)
+      .headers("Content-Length": json.length, "Accept": "application/json")
+      .post(json) (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
           summary = "Scores - "
@@ -36,8 +38,10 @@ module.exports = (robot) ->
   robot.respond /mcc take (.*) (.*)/i, (msg) ->
     value = msg.match[1]
     name = msg.match[2]
-    data = JSON.stringify({"name": name, "value": value})
-    msg.http(urls.take).post(data) (err, res, body) ->
+    json = JSON.stringify({"name": name, "value": value})
+    msg.http(urls.add)
+      .headers("Content-Length": json.length, "Accept": "application/json")
+      .post(json) (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
           summary = "Scores - "
