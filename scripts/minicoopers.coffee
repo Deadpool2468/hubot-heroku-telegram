@@ -23,6 +23,6 @@ module.exports = (robot) ->
         if res.statusCode is 200
           scores = JSON.parse body
           for position, score of scores
-            msg.send "#{position + 1}: #{score.clan} - #{score.score}"
+            msg.send "#{score.clan}: #{score.score}"
         else
           msg.send "Unable to get scores"
