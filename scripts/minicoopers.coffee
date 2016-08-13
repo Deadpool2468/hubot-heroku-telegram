@@ -21,7 +21,7 @@ module.exports = (robot) ->
 
   robot.respond /mcc add (.*) (.*)/i, (msg) ->
     unless robot.auth.hasRole(msg.envelope.user, adminRole)
-      msg.send "Access denied. You must have this role to use this command: #{role}"
+      msg.send "Access denied. You must have this role to use this command: #{adminRole}"
       return
     value = msg.match[1]
     name = msg.match[2]
@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
   robot.respond /mcc take (.*) (.*)/i, (msg) ->
     unless robot.auth.hasRole(msg.envelope.user, adminRole)
-      msg.send "Access denied. You must have this role to use this command: #{role}"
+      msg.send "Access denied. You must have this role to use this command: #{adminRole}"
       return
     value = msg.match[1]
     name = msg.match[2]
@@ -59,7 +59,7 @@ module.exports = (robot) ->
 
   robot.respond /mcc scores/i, (msg) ->
     unless robot.auth.hasRole(msg.envelope.user, adminRole)
-      msg.send "Access denied. You must have this role to use this command: #{role}"
+      msg.send "Access denied. You must have this role to use this command: #{adminRole}"
       return
     msg.http(urls.scores).get() (err, res, body) ->
         if res.statusCode is 200
