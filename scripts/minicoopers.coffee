@@ -58,6 +58,9 @@ module.exports = (robot) ->
           msg.send "Unable to get scores"
 
   robot.respond /mcc scores/i, (msg) ->
+    unless robot.auth.hasRole(msg.envelope.user, adminRole)
+      msg.send "Access denied. You must have this role to use this command: #{role}"
+      return
     msg.http(urls.scores).get() (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
