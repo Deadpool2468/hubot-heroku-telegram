@@ -12,6 +12,7 @@ module.exports = (robot) ->
     return
 
   apiUrl = process.env.MINICOOPERS_API_URL
+  adminRole = 'mcadmin'
 
   urls =
     scores: apiUrl + "/scores"
@@ -19,6 +20,9 @@ module.exports = (robot) ->
     take: apiUrl + "/scores/take"
 
   robot.respond /mcc add (.*) (.*)/i, (msg) ->
+    unless robot.auth.hasRole(msg.envelope.user, adminRole)
+      msg.send "Access denied. You must have this role to use this command: #{role}"
+      return
     value = msg.match[1]
     name = msg.match[2]
     json = JSON.stringify({ name: name, value: value})
@@ -35,6 +39,9 @@ module.exports = (robot) ->
           msg.send "Unable to get scores"
 
   robot.respond /mcc take (.*) (.*)/i, (msg) ->
+    unless robot.auth.hasRole(msg.envelope.user, adminRole)
+      msg.send "Access denied. You must have this role to use this command: #{role}"
+      return
     value = msg.match[1]
     name = msg.match[2]
     json = JSON.stringify({ name: name, value: value })
