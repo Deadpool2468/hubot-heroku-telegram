@@ -38,8 +38,8 @@ module.exports = (robot) ->
   robot.respond /mcc take (.*) (.*)/i, (msg) ->
     value = msg.match[1]
     name = msg.match[2]
-    json = JSON.stringify({ name: name, value: value})
-    msg.http(urls.add)
+    json = JSON.stringify({ name: name, value: value })
+    msg.http(urls.take)
       .headers("Content-Length": json.length, "Content-Type": "application/json")
       .post(json) (err, res, body) ->
         if res.statusCode is 200
