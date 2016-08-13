@@ -25,6 +25,6 @@ module.exports = (robot) ->
           summary = "Scores: "
           for position, score of scores
             summary += "#{score.clan}: #{score.score} "
-          msg.reply summary
+          msg.send summary
         else
           msg.send "Unable to get scores"
