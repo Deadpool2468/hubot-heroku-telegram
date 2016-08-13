@@ -21,7 +21,8 @@ module.exports = (robot) ->
   robot.respond /mcc scores/i, (msg) ->
     msg.http("http://minicoopers.herokuapp.com/api/scores").get() (err, res, body) ->
         if res.statusCode is 200
-          scores = JSON.parse(body)
-          msg.send "Scores: #{scores}"
+          scores = JSON.parse body
+          for clan, score of scores
+            msg.send "#{clan}: #{score}"
         else
           msg.send "Unable to get scores"
