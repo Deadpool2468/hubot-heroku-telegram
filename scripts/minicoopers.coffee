@@ -24,7 +24,7 @@ module.exports = (robot) ->
     name = msg.match[2]
     json = JSON.stringify({"name": name, "value": value})
     msg.http(urls.add)
-      .headers("Content-Length": json.length, "Accept": "application/json")
+      .headers("Content-Length": json.length, "Content-Type": "application/json")
       .post(json) (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
@@ -40,7 +40,7 @@ module.exports = (robot) ->
     name = msg.match[2]
     json = JSON.stringify({"name": name, "value": value})
     msg.http(urls.add)
-      .headers("Content-Length": json.length, "Accept": "application/json")
+      .headers("Content-Length": json.length, "Content-Type": "application/json")
       .post(json) (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
