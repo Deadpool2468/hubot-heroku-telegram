@@ -22,7 +22,7 @@ module.exports = (robot) ->
     msg.http("http://minicoopers.herokuapp.com/api/scores").get() (err, res, body) ->
         if res.statusCode is 200
           scores = JSON.parse body
-          for clan, score of scores
-            msg.send "#{clan}: #{score}"
+          for position, score of scores
+            msg.send "#{position + 1}: #{score.clan} - #{score.score}"
         else
           msg.send "Unable to get scores"
