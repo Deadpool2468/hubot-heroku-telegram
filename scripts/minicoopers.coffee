@@ -36,7 +36,8 @@ module.exports = (robot) ->
             summary += "#{score.clan}: #{score.score} "
           msg.send summary
         else
-          msg.send "Unable to get scores"
+          robot.logger.error "Unable to add score.\nStatusCode: #{res.statusCode}, Error: #{err}"
+          msg.send "Unable to add score"
 
   robot.respond /mcc take (.*) (.*)/i, (msg) ->
     unless robot.auth.hasRole(msg.envelope.user, adminRole)
@@ -55,7 +56,8 @@ module.exports = (robot) ->
             summary += "#{score.clan}: #{score.score} "
           msg.send summary
         else
-          msg.send "Unable to get scores"
+          robot.logger.error "Unable to take score.\nStatusCode: #{res.statusCode}, Error: #{err}"
+          msg.send "Unable to take score"
 
   robot.respond /mcc scores/i, (msg) ->
     msg.http(urls.scores).get() (err, res, body) ->
@@ -66,4 +68,5 @@ module.exports = (robot) ->
             summary += "#{score.clan}: #{score.score} "
           msg.send summary
         else
+          robot.logger.error "Unable to get scores.\nStatusCode: #{res.statusCode}, Error: #{err}"
           msg.send "Unable to get scores"
