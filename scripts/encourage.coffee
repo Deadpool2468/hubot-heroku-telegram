@@ -8,6 +8,7 @@
 #   None
 #
 # Commands:
+#   hubot encourage me
 #   hubot encourage name
 #   hubot encourage all
 #
@@ -43,6 +44,7 @@ module.exports = (robot) ->
 	robot.respond /(encourage )(.*)/i, (msg) ->
 		encourage = msg.random remarks
 
+		encouragingme = () -> msg.send encourage.replace "%", msg.message.user.first_name
 		encouragingyou = () -> msg.send encourage.replace "%", msg.match[2]
 
 		if msg.match[2] == 'me'
