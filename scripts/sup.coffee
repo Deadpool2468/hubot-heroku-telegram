@@ -17,12 +17,12 @@
 
 remarks = [
     "sup, %?",
-    "sup, ma g?",
+    "%, sup, m' g?",
     "wazzup, %!",
     "wassup, %?!",
-    "whazzup, g",
+    "%, whazzup, g?",
     "wassup, dude?",
-    "whazzup, ma g",
+    "%, whazzup, ma g",
     "what is up, %s?",
     "I say, %, what is up?",
     "Wassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssup, %?",
