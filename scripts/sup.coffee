@@ -17,20 +17,21 @@
 
 remarks = [
     "sup, %?",
+    "sup, ma g?",
     "wazzup, %!",
     "wassup, %?!",
     "whazzup, g",
     "wassup, dude?",
     "whazzup, ma g",
-    "whazzup, ma g",
     "what is up, %s?",
-    "I say, %s, what is up?",
+    "I say, %, what is up?",
     "Wassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssup, %?",
     "Yo, %, sup?"
 ]
 allinclusive = [
     "WAAAAAAAAZZZZZZZZZZZZZZZZUP!",
-    "wassup, fam"
+    "wassup, fam",
+    "whateva"
 ]
 
 module.exports = (robot) ->
