@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   robot.listen(
-    (message) ->
-      console.log 'msg: ' + JSON.stringify message
+    (msg) ->
+      console.log 'photo: ' + JSON.stringify msg.message.photo
       console.log '============================'
       false
     (response) ->
