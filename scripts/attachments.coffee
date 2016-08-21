@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   robot.listen(
     (message) ->
-      console message
+      console.log message
       false
     (response) ->
       response.reply "mini uploaded"
