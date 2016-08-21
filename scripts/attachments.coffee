@@ -3,7 +3,7 @@ module.exports = (robot) ->
     (message) ->
       console.log 'msg: ' + message
       console.log '============================'
-      console.log 'raw msg: ' + message.rawMessage
+      console.log 'photo: ' + message.photo
       false
     (response) ->
       response.reply "mini uploaded"
