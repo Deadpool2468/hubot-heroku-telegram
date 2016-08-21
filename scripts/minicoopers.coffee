@@ -1,5 +1,5 @@
 # Description:
-#   Utility commands surrounding Hubot uptime.
+#   Commands to get and alter MiniCooperCounts scores
 #
 # Commands:
 #   mcc scores - Get clan scores
