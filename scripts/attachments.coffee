@@ -1,7 +1,8 @@
 module.exports = (robot) ->
   robot.listen(
     (message) ->
-      message.rawMessage?.photo?
+      console message
+      false
     (response) ->
       response.reply "mini uploaded"
   )
