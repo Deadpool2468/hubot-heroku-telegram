@@ -11,5 +11,4 @@ module.exports = (robot) ->
       isMccPhoto
     (cb) ->
       console.log 'cb: ' + cb
-      res.reply "hi"
   )
