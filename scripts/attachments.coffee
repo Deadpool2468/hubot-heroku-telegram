@@ -4,7 +4,10 @@ module.exports = (robot) ->
       console.log 'photo: ' + msg.message.photo
       console.log 'caption: ' + msg.message.caption
 
-      false;
+      isMccPhoto = msg.message.photo and msg.message.caption and msg.message.caption is 'mcc'
+      console.log 'isMccPhoto: ' + isMccPhoto
+
+      isMccPhoto
     (response) ->
       response.reply "mini uploaded"
   )
