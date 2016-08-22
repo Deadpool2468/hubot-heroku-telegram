@@ -1,7 +1,10 @@
 module.exports = (robot) ->
   robot.listen(
     (msg) ->
-      msg.message.photo and msg.message.caption? and msg.message.caption is 'mcc'
+      console.log 'photo: ' + msg.message.photo
+      console.log 'caption: ' + msg.message.caption
+
+      false;
     (response) ->
       response.reply "mini uploaded"
   )
