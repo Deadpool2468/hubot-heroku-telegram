@@ -8,7 +8,7 @@ module.exports = (robot) ->
       console.log 'isMccPhoto: ' + isMccPhoto
 
       isMccPhoto
-    (response) ->
-      console.log response
-      response.reply 'mini uploaded'
+    (res) ->
+      console.log 'response: ' + response
+      res.response.reply 'mini uploaded'
   )
