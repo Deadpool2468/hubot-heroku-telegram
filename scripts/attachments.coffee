@@ -9,6 +9,6 @@ module.exports = (robot) ->
 
       isMccPhoto
     (res) ->
-      console.log 'response: ' + response
+      console.log 'response: ' + res
       res.response.reply 'mini uploaded'
   )
