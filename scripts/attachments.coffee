@@ -10,6 +10,5 @@ module.exports = (robot) ->
 
       isMccPhoto
     (response) ->
-      console.log 'response: ' + response
       response.reply "hello world"
   )
