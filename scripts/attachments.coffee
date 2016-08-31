@@ -17,3 +17,4 @@ module.exports = (robot) ->
     (response) ->
       fact = response.match
       res.reply "#{fact} is #{facts[fact]}"
+  )
