@@ -9,6 +9,5 @@ module.exports = (robot) ->
       console.log 'isMccPhoto: ' + isMccPhoto
 
       isMccPhoto
-    (response) ->
-      response.reply "hello world"
+    (response) -> "meh"
   )
