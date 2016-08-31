@@ -1,14 +1,14 @@
 module.exports = (robot) ->
   robot.listen(
     (msg) ->
-      console.log 'photo: ' + msg.message.photo
-      console.log 'caption: ' + msg.message.caption
+      robot.logger.info "photo: #{msg.message.photo}"
+      robot.logger.info "caption: #{msg.message.caption}"
 
       isMccPhoto = msg.message and msg.message.photo and msg.message.caption and msg.message.caption.toLowerCase() is 'mcc'
 
-      console.log 'isMccPhoto: ' + isMccPhoto
+      robot.logger.info "isMccPhoto: #{isMccPhoto}"
 
       isMccPhoto
     (response) ->
-      console.log 'response: ' + response
+      robot.logger.info "response: #{response}"
   )
