@@ -26,7 +26,8 @@ remarks = [
     "what is up, %s?",
     "I say, %, what is up?",
     "Wassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssup, %?",
-    "Yo, %, sup?"
+    "Yo, %, sup?",
+    "Norbles, %"
 ]
 allinclusive = [
     "WAAAAAAAAZZZZZZZZZZZZZZZZUP!",
